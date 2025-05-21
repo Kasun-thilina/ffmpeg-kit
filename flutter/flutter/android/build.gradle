@@ -56,7 +56,8 @@ dependencies {
 //    implementation 'com.smart:exception-common:0.2.1'
 //    implementation 'com.smart:exception-java:0.2.1'
 //    or
-    implementation 'com.arthenica:smart-exception-java:0.2.1'
+    implementation("com.arthenica:ffmpeg-kit-https:6.0-2.LTS")
+
 //end:    smart-exception-java
 
 //end:ffmpeg-kit-https
