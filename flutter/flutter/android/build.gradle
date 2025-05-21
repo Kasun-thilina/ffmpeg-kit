@@ -13,6 +13,16 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
+        ivy {
+            name = 'GitHubReleaseArtifacts'
+            url  = uri('https://github.com/Kasun-thilina/ffmpeg-kit/releases/download/V6.0.2')
+            patternLayout {
+                artifact '[artifact]-[revision].[ext]'
+            }
+            metadataSources {
+                artifact()
+            }
+        }
     }
 }
 
@@ -49,7 +59,10 @@ android {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.5.0'
-    implementation 'com.arthenica:ffmpeg-kit-https:6.0-2'
+    implementation group: 'com.github.kasunthilina.ffmpegkit',
+            name:  'ffmpeg-kit-https',
+            version: '6.0-2@aar'
+//    implementation 'com.arthenica:ffmpeg-kit-https:6.0-2'
 //start:ffmpeg-kit-https
 //    implementation 'com.arthenica:ffmpeg-kit-https:6.0-2'
 //    FmpegKit has been officially retired.Place dependent libraries locally
@@ -60,7 +73,7 @@ dependencies {
 //    implementation files('./libs/smart-exception-java-0.2.1.jar')
 //    implementation files('./libs/smart-exception-common-0.2.1.jar')
 //    or
-//    implementation 'com.arthenica:smart-exception-java:0.2.1'
+    implementation 'com.arthenica:smart-exception-java:0.2.1'
 //end:    smart-exception-java
 
 //end:ffmpeg-kit-https
